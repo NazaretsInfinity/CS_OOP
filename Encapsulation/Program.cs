@@ -16,11 +16,11 @@ namespace Encapsulation
         }
         static void Main(string[] args)
         {
-            Point A = new Point(); // new call Constructor of class;
+            Point A = new Point(); // 'new' call Constructor of class;
             A.Print();
 
 
-            Point B = new Point(11,12); //default 
+            Point B = new Point(11,12); 
             //ref       //object
             B.X = 3;
             B.Y = 4;

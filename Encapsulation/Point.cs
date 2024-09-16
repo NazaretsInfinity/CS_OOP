@@ -15,7 +15,7 @@ namespace Encapsulation
 
         public double Distance(Point A)
         {
-            return Math.Sqrt(Math.Pow(X - A.X,2) + Math.Pow(Y - A.Y, 2));
+            return Math.Sqrt(Math.Pow(X - A.X,2) + Math.Pow(Y - A.Y, 2));         
         }
 
 
