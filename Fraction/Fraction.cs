@@ -78,11 +78,11 @@ namespace Fraction
                 );
         }
 
-        public static Fraction operator-(Fraction first, Fraction second)
+        public static Fraction operator-(Fraction one, Fraction two)
         {
-           int Numerator1 = first.Numerator+ (first.Integer != 0 ? first.Integer * first.Denominator : 0);
-            int Numerator2 = second.Numerator + (second.Integer != 0 ? second.Integer * second.Denominator : 0);
-           return new Fraction(Numerator1 *second.Denominator - second.Numerator*first.Denominator, first.Denominator*second.Denominator);
+            Fraction first = one.Improper();
+            Fraction second = two.Improper();
+           return new Fraction(first.Numerator*second.Denominator - second.Numerator*first.Denominator, first.Denominator*second.Denominator);
         }
 
 
