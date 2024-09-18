@@ -80,9 +80,9 @@ namespace Fraction
 
         public static Fraction operator-(Fraction first, Fraction second)
         {
-           Fraction one = first.Improper();
-           Fraction two = second.Improper();
-           return new Fraction(one.Numerator*two.Denominator - two.Numerator*one.Denominator, one.Denominator*two.Denominator);
+           int Numerator1 = first.Numerator+ (first.Integer != 0 ? first.Integer * first.Denominator : 0);
+            int Numerator2 = second.Numerator + (second.Integer != 0 ? second.Integer * second.Denominator : 0);
+           return new Fraction(Numerator1 *second.Denominator - second.Numerator*first.Denominator, first.Denominator*second.Denominator);
         }
 
 
@@ -97,8 +97,8 @@ namespace Fraction
 
         public static bool operator ==(Fraction first, Fraction second)
         {
-             Fraction one = first.Improper();
-             Fraction two = second.Improper();
+            Fraction one = first.Improper();
+            Fraction two = second.Improper();
             return one.Integer == two.Integer && one.Numerator*two.Denominator == one.Denominator*two.Numerator;       
         }
 
