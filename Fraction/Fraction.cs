@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -88,8 +89,8 @@ namespace Fraction
 
         public static Fraction operator/(Fraction first, Fraction second)
         {
-            Fraction sec = second;
-            return new Fraction(first * new Fraction(sec.Denominator, sec.Numerator));
+            return new Fraction(first * new Fraction(second.Denominator, second.Numerator +
+                (second.Integer !=0 ? second.Integer*second.Denominator : 0)));
         }
         //COMPRASION 
 
