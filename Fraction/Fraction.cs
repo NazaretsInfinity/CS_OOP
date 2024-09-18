@@ -21,6 +21,7 @@ namespace Fraction
         public Fraction(int integer)
         {
             this.Integer = integer;
+            this.Denominator = 1;
             Console.WriteLine($"OneArgumentConstructor: {GetHashCode()}");
         }
 
@@ -59,12 +60,13 @@ namespace Fraction
 
 
         //OPERATORS
+
         public static Fraction operator*(Fraction first, Fraction second)
         {
            Fraction one = first.Improper();
            Fraction two = second.Improper();
-            Fraction result  = new Fraction(one.Numerator*two.Numerator,one.Denominator*two.Denominator);
-            return result;
+           Fraction result  = new Fraction(one.Numerator*two.Numerator,one.Denominator*two.Denominator);
+           return result;
         }
 
         public static Fraction operator+(Fraction first, Fraction second)
@@ -82,11 +84,27 @@ namespace Fraction
            return new Fraction(one.Numerator*two.Denominator - two.Numerator*one.Denominator, one.Denominator*two.Denominator);
         }
 
+
+
         public static Fraction operator/(Fraction first, Fraction second)
         {
       
             Fraction sec = second.Improper();
             return new Fraction(first * new Fraction(sec.Denominator, sec.Numerator));
+        }
+        //COMPRASION 
+
+
+        public static bool operator ==(Fraction first, Fraction second)
+        {
+             Fraction one = first.Improper();
+             Fraction two = second.Improper();
+            return one.Integer == two.Integer && one.Numerator*two.Denominator == one.Denominator*two.Numerator;       
+        }
+
+        public static bool operator !=(Fraction one, Fraction two)
+        {
+            return !(one == two);
         }
 
 
