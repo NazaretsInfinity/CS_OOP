@@ -88,8 +88,7 @@ namespace Fraction
 
         public static Fraction operator/(Fraction first, Fraction second)
         {
-      
-            Fraction sec = second.Improper();
+            Fraction sec = second;
             return new Fraction(first * new Fraction(sec.Denominator, sec.Numerator));
         }
         //COMPRASION 

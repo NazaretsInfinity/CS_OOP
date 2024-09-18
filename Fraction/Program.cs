@@ -36,21 +36,15 @@ namespace Fraction
             Console.WriteLine(B);
            
 
-           // Fraction C = new Fraction(A*B);
-           //  Console.WriteLine(C);
-           //
-           // Fraction D = new Fraction(A+B);
-           //  Console.WriteLine(D);
-           //
-           // Fraction E = new Fraction(A-B);
-           //  Console.WriteLine(E);
+           Fraction C = new Fraction(A*B);
+            Console.WriteLine(C);
+           
+           Fraction D = new Fraction(A+B);
+            Console.WriteLine(D);
+           
+           Fraction E = new Fraction(A-B);
+            Console.WriteLine(E);
 
-           //  Fraction F = new Fraction(A/B);
-           // Console.WriteLine(F);
-
-            //Console.WriteLine(A>B);
-            //Console.WriteLine(A<B);
-            Fraction F = new Fraction(A);
             Console.WriteLine(A/B);
             Console.WriteLine(A==B);
            // Console.WriteLine(A!=B);
